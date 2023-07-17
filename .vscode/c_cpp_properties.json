@@ -1,0 +1,15 @@
+{
+    "configurations": [
+        {
+            "name": "ToonTanksEditor Editor Win64 Development (ToonTanks)",
+            "intelliSenseMode": "msvc-x64",
+            "compileCommands": "D:\\Abrar_Personal_Projects\\UnrealEngineCourse\\ToonTanks\\.vscode\\compileCommands_ToonTanks.json"
+        },
+        {
+            "name": "Win32",
+            "intelliSenseMode": "msvc-x64",
+            "compileCommands": "D:\\Abrar_Personal_Projects\\UnrealEngineCourse\\ToonTanks\\.vscode\\compileCommands_Default.json"
+        }
+    ],
+    "version": 4
+}
