@@ -19,6 +19,8 @@ protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
+	virtual void RotateTurret(FVector LookAtPos);
+
 private:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly,Category = "Main Collider", meta = (AllowPrivateAccess = "true"))
 	class  UCapsuleComponent* CapsuleComp;
@@ -28,6 +30,9 @@ private:
 	class UStaticMeshComponent* TurretMesh;
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Spawn Points", meta = (AllowPrivateAccess = "true"))
 	class USceneComponent* ProjectileSpawnPoint;
+
+	UPROPERTY(EditDefaultsOnly, Category = "Turret Stats")
+		float TurretRotationSpeed = 100.0f;
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
