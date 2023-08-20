@@ -29,4 +29,12 @@ private:
 
 	UPROPERTY(EditDefaultsOnly, Category = "Combat")
 	float DetectionRange;
+
+	UPROPERTY(EditAnywhere, Category = "Combat")
+	float FireRate = 2.0f;
+
+	FTimerHandle FireTimeHandler;
+	void CheckTimerHandler();
+
+	void CallActionWhenInRange(TFunction<void> InRangeMethod);
 };
