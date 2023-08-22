@@ -34,6 +34,9 @@ private:
 
 	UPROPERTY(EditDefaultsOnly, Category = "Turret Stats")
 		float TurretRotationSpeed = 100.0f;
+
+	UPROPERTY(EditDefaultsOnly, Category = "Combat")
+		TSubclassOf<class AProjectile> ProjectileClass;
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;

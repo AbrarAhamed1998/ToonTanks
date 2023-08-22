@@ -9,16 +9,8 @@
 void ATower::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-	CallActionWhenInRange( [&]() -> void { ABasePawn::RotateTurret(TargetTank->GetActorLocation()); });
-	/*if (TargetTank)
-	{
-		float Distance = FVector::Distance(GetActorLocation(), TargetTank->GetActorLocation());
-
-		if (Distance <= DetectionRange)
-		{
-			RotateTurret(TargetTank->GetActorLocation());
-		}
-	} */
+	if (IsTargetInRange())
+		RotateTurret(TargetTank->GetActorLocation());
 }
 
 void ATower::BeginPlay()
@@ -32,10 +24,11 @@ void ATower::BeginPlay()
 
 void ATower::CheckTimerHandler()
 {
-	CallActionWhenInRange(&Fire);
+	if (IsTargetInRange())
+		Fire();
 }
 
-void ATower::CallActionWhenInRange(TFunction<void> InRangeMethod)
+bool ATower::IsTargetInRange()
 {
 	if (TargetTank)
 	{
@@ -43,7 +36,8 @@ void ATower::CallActionWhenInRange(TFunction<void> InRangeMethod)
 
 		if (Distance <= DetectionRange)
 		{
-			InRangeMethod;
+			return true;
 		}
 	}
+	return false;
 }

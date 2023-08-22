@@ -36,5 +36,5 @@ private:
 	FTimerHandle FireTimeHandler;
 	void CheckTimerHandler();
 
-	void CallActionWhenInRange(TFunction<void> InRangeMethod);
+	bool IsTargetInRange();
 };
