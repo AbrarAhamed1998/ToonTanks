@@ -35,7 +35,7 @@ private:
 	UPROPERTY(EditDefaultsOnly, Category = "Turret Stats")
 		float TurretRotationSpeed = 100.0f;
 
-	UPROPERTY(EditDefaultsOnly, Category = "Combat")
+	UPROPERTY(EditDefaultsOnly, Category = "Combat", meta = (AllowPrivateAccess = "true"))
 		TSubclassOf<class AProjectile> ProjectileClass;
 public:	
 	// Called every frame
