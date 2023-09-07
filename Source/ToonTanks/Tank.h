@@ -20,6 +20,10 @@ public:
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
+	void HandleDestruction();
+
+	APlayerController* GetPlayerTankController() const { return PlayerTankController; }
+
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
@@ -34,7 +38,7 @@ private:
 	UPROPERTY(EditDefaultsOnly, Category = "Tank Stats")
 		float TankRotationSpeed = 2.f;
 
-	APlayerController* PlayerController;
+	APlayerController* PlayerTankController;
 public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;

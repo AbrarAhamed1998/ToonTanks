@@ -41,6 +41,11 @@ void ABasePawn::Tick(float DeltaTime)
 
 }
 
+void ABasePawn::HandleDestruction()
+{
+	//TODO: VFX and SFX
+}
+
 // Called to bind functionality to input
 void ABasePawn::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 {

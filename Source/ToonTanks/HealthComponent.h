@@ -28,6 +28,7 @@ private:
 	UPROPERTY(EditAnywhere)
 	float MaxHealth = 100.f;
 	float CurrentHealth = 0.f;
+	class AToonTanksGameMode* CurrentGameMode;
 	UFUNCTION()
 		void DamageTaken(AActor* TargetActor, float DamageValue, const UDamageType* DamageType, class AController* Instigator, AActor* DamageApplier);
 };

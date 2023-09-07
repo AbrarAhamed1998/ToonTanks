@@ -22,6 +22,12 @@ void ATower::BeginPlay()
 	GetWorldTimerManager().SetTimer(FireTimeHandler, this,&ATower::CheckTimerHandler,FireRate, true);
 }
 
+void ATower::HandleDestruction()
+{
+	Super::HandleDestruction();
+	Destroy();
+}
+
 void ATower::CheckTimerHandler()
 {
 	if (IsTargetInRange())
