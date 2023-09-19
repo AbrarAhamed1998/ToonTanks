@@ -35,10 +35,20 @@ private:
 	class USceneComponent* ProjectileSpawnPoint;
 
 	UPROPERTY(EditDefaultsOnly, Category = "Turret Stats")
-		float TurretRotationSpeed = 100.0f;
+	float TurretRotationSpeed = 100.0f;
 
 	UPROPERTY(EditDefaultsOnly, Category = "Combat", meta = (AllowPrivateAccess = "true"))
-		TSubclassOf<class AProjectile> ProjectileClass;
+	TSubclassOf<class AProjectile> ProjectileClass;
+
+	UPROPERTY(EditDefaultsOnly, Category = "Combat")
+	class UParticleSystem* DeathParticles;
+
+	UPROPERTY(EditDefaultsOnly, Category = "Combat")
+	class USoundBase* DeathSFX;
+
+	UPROPERTY(EditDefaultsOnly, Category = "Combat")
+	TSubclassOf<class UCameraShakeBase> DeathCameraShake;
+
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;

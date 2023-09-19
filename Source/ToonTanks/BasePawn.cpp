@@ -44,6 +44,29 @@ void ABasePawn::Tick(float DeltaTime)
 void ABasePawn::HandleDestruction()
 {
 	//TODO: VFX and SFX
+	if (DeathParticles)
+	{
+		UGameplayStatics::SpawnEmitterAtLocation(
+			this,
+			DeathParticles,
+			GetActorLocation(),
+			GetActorRotation()
+		);
+	}
+
+	if (DeathSFX)
+	{
+		UGameplayStatics::PlaySoundAtLocation(
+			this,
+			DeathSFX,
+			GetActorLocation()
+		);
+	}
+
+	if (DeathCameraShake)
+	{
+		GetWorld()->GetFirstPlayerController()->ClientStartCameraShake(DeathCameraShake);
+	}
 }
 
 // Called to bind functionality to input

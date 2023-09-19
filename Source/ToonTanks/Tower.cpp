@@ -40,7 +40,7 @@ bool ATower::IsTargetInRange()
 	{
 		float Distance = FVector::Distance(GetActorLocation(), TargetTank->GetActorLocation());
 
-		if (Distance <= DetectionRange)
+		if (Distance <= DetectionRange && !TargetTank->IsHidden())
 		{
 			return true;
 		}
